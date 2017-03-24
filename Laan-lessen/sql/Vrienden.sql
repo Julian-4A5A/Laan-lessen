@@ -18,7 +18,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Table `mydb`.`country`
 -- -----------------------------------------------------
-CREATE TABLE `country` (
+CREATE TABLE `eucountries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` char(2) NOT NULL COMMENT 'Two-letter country code (ISO 3166-1 alpha-2)',
   `name` varchar(64) NOT NULL COMMENT 'English country name',
@@ -104,12 +104,12 @@ CREATE TABLE IF NOT EXISTS `Wedstrijd` (
   INDEX `fk_Wedstrijd_toernooi1_idx` (`toernooi_id` ASC),
   CONSTRAINT `fk_Wedstrijd_country1`
     FOREIGN KEY (`country_id`)
-    REFERENCES `mydb`.`country` (`id`)
+    REFERENCES `country` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Wedstrijd_country2`
     FOREIGN KEY (`country_id1`)
-    REFERENCES `mydb`.`country` (`id`)
+    REFERENCES `country` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Wedstrijd_toernooi1`

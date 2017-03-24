@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #container{
+        width: 300px;
+
+        padding: 5px;
+        border: solid black 1px;
+        margin-top: 10px;
+
+      }
+    </style>
+    <script src="javascript.js" charset="utf-8"></script>
+  </head>
+  <body>
+<form method="post">
+  <label>voer getal in:</label><br>
+  <input type="number" id="getal">
+
+
+</form>
+<button  onclick="set('0')">versturen</button>
+<button  onclick="set('1')">versturen</button>
+<div id="container" >
+  <ul id="myUL">
+    <li>Cijfers</li>
+    <span id="uitkomst"></span> <span id="uitkomstDeel"></span>
+    </ul>
+</div>
+  </body>
+</html>

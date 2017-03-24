@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Info</title>
+    <style>
+
+        .listitem {
+            color: red;
+        }
+
+        .prefilled {
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Info</h1>
+
+    <ul>
+        <li>Naam: <span id="name">Julian</span></li>
+        <li>Studentnummer: <span id="studentnumber">504690</span></li>
+        <li>Opleiding: <span class="prefilled">Applicatieontwikkeling</span></li>
+        <li>Klas: <span class="prefilled">4A5A</span></li>
+    </ul>
+</body>
+</html>
+<script type="text/javascript">
+  document.getElementById("name")innerHTML = "julian";
+  document.getElementById("studentnumber")innerHTML = "504690";
+</script>
+<!--
+JavaScript Opdracht:
+1) Vul je eigen naam en studentnummer in de <span> elementen.
+2) Voeg aan alle <li> elementen de class "listitem" toe.
+3) Verwijder de class "prefilled" uit alle elementen die deze class hebben.
+
+-->
