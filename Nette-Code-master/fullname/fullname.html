@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang=nl>
+<head>
+    <meta CHARSET=utf-8>
+    <title>Volledige Naam</title>
+    <style>
+          body{
+            font-family: "Arial";
+        }
+          div {
+            padding: 5px;
+          }
+          label
+          {
+            display: inline-block;
+            width: 8em;
+          }
+          #result-fullname {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<Body>
+  <form>
+    <div>
+        <label for="firstname">Voornaam:</label>
+        <input id="firstname" name="firstname" type=  text placeholder="Voer een voornaam in">
+    </div>
+    <div>
+      <label for="lastname">Achternaam:</label>
+      <input id="lastname" name="lastname" type="text" placeholder="Voer een achternaam in">
+    </div>
+    <div>
+      <button type= "button" id="show-fullname">Toon volledige naam</button>
+    </div>
+  </form>
+  <div id="result-fullname"></div>
+
+<script>
+
+        function showFullname(){
+          var firstname = document.getElementById("firstname").value;var lastname = document.getElementById("lastname").value;
+          var fullname = getFullName(firstname, lastname);
+          document.getElementById("result-fullname").innerHTML = fullname;
+        }
+        function getFullName(firstname, lastname) {
+              var fullname = firstname + " " + lastname;
+              return fullname;
+            }
+          // button event
+            document.getElementById("show-fullname").addEventListener("click", showFullname);
+    </script>
+</body>
+</html>

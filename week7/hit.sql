@@ -14,13 +14,12 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Song`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Song` (
+CREATE TABLE IF NOT EXISTS 'Song' (
   `id` INT NOT NULL,
   `SongName` VARCHAR(45) NULL,
   `Relatedate` DATE NULL,
@@ -31,7 +30,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Artiest`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Artiest` (
+CREATE TABLE IF NOT EXISTS `Artiest` (
   `id` INT NOT NULL,
   `Naam` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
@@ -41,7 +40,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`notering`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`notering` (
+CREATE TABLE IF NOT EXISTS `notering` (
   `id` INT NOT NULL,
   `Start` DATE NULL,
   PRIMARY KEY (`id`))
@@ -51,7 +50,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Toplist`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Toplist` (
+CREATE TABLE IF NOT EXISTS `Toplist` (
   `id` INT NOT NULL,
   `Relaesedate` DATE NULL,
   `Naam` VARCHAR(45) NULL,
@@ -62,7 +61,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`lied`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`lied` (
+CREATE TABLE IF NOT EXISTS `lied` (
   `Artiest_id` INT NOT NULL,
   `Song_id` INT NOT NULL,
   `notering_id` INT NOT NULL,
@@ -90,7 +89,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`weeklijst`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`weeklijst` (
+CREATE TABLE IF NOT EXISTS `weeklijst` (
   `id` INT NOT NULL,
   `week_nummer` INT NULL,
   `jaartal` DATE NULL,
@@ -109,7 +108,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`lijst`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`lijst` (
+CREATE TABLE IF NOT EXISTS `lijst` (
   `weeklijst_id` INT NOT NULL,
   `weeklijst_Toplist_id` INT NOT NULL,
   `lied_Artiest_id` INT NOT NULL,
