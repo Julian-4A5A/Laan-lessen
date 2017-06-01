@@ -1,32 +1,49 @@
-
-window.addEventListener("click", move);
-var arr = [];
-
-function positionMouse(Event) {
-
-  var position = {
-    x : Event.pageX,
-    y : Event.pageY
-  }
-
-  arr.push(position);
-  console.log(arr);
-
-
-
+var circle = document.getElementById('circle');
+var arrY= [];
+var arrX= [];
+var counter = 0;
+var i;
+window.addEventListener('click',start);
+window.addEventListener('dbclick',stop);
+function start() {
+    window.addEventListener("mousemove", savemove);
 }
-function move() {
-  window.addEventListener("mousemove", positionMouse);
-  window.addEventListener("click", show);
+
+function stop() {
+    window.removeEventListener("mousemove", savemove);
+    window.removeEventListener("click", move);
+    circle.style.display = "none";
+    empty();
 }
-function show() {
-  var y ='';
-  var x = '';
-  window.removeEventListener("mousemove", positionMouse);
-  for (var i = 0; i < arr.length; i++) {
-    x += arr[i].x ;
-    y += arr[i].y;
-  }
-document.getElementById("circle").style.left = x +'px'
-document.getElementById("circle").style.top = y +'px'
+
+function savemove(event) {
+
+  var x = Event.pageX;
+  var  y = Event.pageY;
+
+console.log(x);
+console.log(y);
+  arrX.push(x);
+  arrY.push(y);
+  document.addEventListener("click", move);
+}
+
+function move(event) {
+
+    i = setInterval(function(){
+        counter += 1;
+        circle.style.left = arrX[counter] + "px";
+        circle.style.top = arrY[counter] + "px";
+
+        if (arr.length <= counter) {
+            empty();
+        }
+    }, 10);
+}
+
+function empty() {
+  var arrY= [];
+  var arrX= [];
+    counter = 0;
+    clearInterval(i);
 }
